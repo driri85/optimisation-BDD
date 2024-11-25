@@ -1,0 +1,3 @@
+TAPEZ 
+npm i
+dans le terminal pour installer le package nodemon et express

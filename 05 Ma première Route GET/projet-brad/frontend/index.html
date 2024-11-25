@@ -1,0 +1,14 @@
+<button onclick="qui()">
+    Qui est Brad
+</button>
+<h1></h1>
+<img width="200">
+<script>
+    async function qui(){
+        const r = await fetch('http://localhost:3000/api/brad');
+        const data = await r.json();
+        console.log(data);
+        document.querySelector('h1').innerHTML =data.title;
+        document.querySelector('img').setAttribute('src',data.imageUrl);
+    }
+</script>
