@@ -1,0 +1,82 @@
+<h1>Démo Communiquer avec une API avec Fetch</h1>
+<button id="btnAjouter">Ajouter</button> 
+<br /><br />
+<button id="btnModifier">Modifier</button>
+<br /><br />
+<button id="btnModifier2">Modifier2</button>
+<br /><br />
+<button id="btnEffacer">Effacer</button>
+<br /><br />
+<button id="btnLire">LIRE</button>
+
+<script>
+  const dbFire =
+    "https://alpha-javascript-default-rtdb.europe-west1.firebasedatabase.app/";
+  const noeud = "films";
+
+  // POST AJOUTER //
+  document.getElementById("btnAjouter").onclick = async () => {
+    const url = `${dbFire}${noeud}.json`;
+    const film = { name: "The Matrix", year: "1999" };
+    const response = await fetch(url, {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(film),
+    });
+    const info = await response.json();
+    console.log(info);
+  };
+
+  // PUT MODIFIER //
+  document.getElementById("btnModifier").onclick = async () => {
+    const id = "-OB61hz-EJ8b3Ig7KrdG";
+    const url = `${dbFire}${noeud}/${id}.json`;
+    const film = { name: "STAR WARS", year: "1977" };
+    const response = await fetch(url, {
+      method: "PUT",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(film),
+    });
+    const info = await response.json();
+    console.log(info);
+  };
+
+  // PATCH MODIFIER 2 //
+  document.getElementById("btnModifier2").onclick = async () => {
+    const id = "-OB61hz-EJ8b3Ig7KrdG";
+    const url = `${dbFire}${noeud}/${id}.json`;
+    const film = { year: "1901" };
+    const response = await fetch(url, {
+      method: "PATCH",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(film),
+    });
+    const info = await response.json();
+    console.log(info);
+  };
+  // DELETE ENLEVER //
+  document.getElementById("btnEffacer").onclick = async () => {
+    const id = "-OB61hz-EJ8b3Ig7KrdG";
+    const url = `${dbFire}${noeud}/${id}.json`;
+    const film = { year: "1901" };
+    const response = await fetch(url, {method: "DELETE"});
+    const info = await response.json();
+    console.log(info);
+  };
+  // GET LIRE //
+  document.getElementById("btnLire").onclick = async () => {
+    const url = `${dbFire}${noeud}.json`;
+    const response = await fetch(url);
+    const info = await response.json();
+    console.log(info);
+  };
+</script>

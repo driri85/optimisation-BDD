@@ -1,0 +1,42 @@
+<button id="btnSWAPI">Démo API Basic</button> <br /><br />
+<button id="btnOneFilm">Affiche 1 film</button> <br /><br />
+<button id="btnOneFilmById">Affiche 1 film avec ID</button> <br /><br />
+<button id="btnFilms">Affiche les 10 premiers films</button>
+
+<script>
+   document.getElementById("btnSWAPI").onclick = async () => {
+    const response = await fetch("https://swapi.dev/api/people/1");
+    const data = await response.json();
+    console.log(data);
+  };
+
+  const key = "efdc2275";
+  const url = `http://www.omdbapi.com/?apikey=${key}`;
+  // Afficher 1 film   s=star
+  //----------------------------
+  document.getElementById("btnOneFilm").onclick = async () => {
+    const nom = "Star Wars";
+    const url2 = `${url}&t=${nom}`; // t= pour récupérer 1 film
+    const response = await fetch(url2);
+    const film = await response.json();
+    console.log(film);
+  };
+  // Afficher 1 film avec son id   i=tt0080684
+  //----------------------------
+  document.getElementById("btnOneFilmById").onclick = async () => {
+    const imdbID = "tt0080684";
+    const url2 = `${url}&i=${imdbID}`; // t= pour récupérer 1 film
+    const response = await fetch(url2);
+    const film = await response.json();
+    console.log(film);
+  };
+  // Afficher les 10 premier films avec son id   s=star
+  //----------------------------
+  document.getElementById("btnFilms").onclick = async () => {
+    const nom = "Star Wars";
+    const url2 = `${url}&s=${nom}`; // s= pour récupérer 10 films
+    const response = await fetch(url2);
+    const data = await response.json();
+    console.log(data);
+  };
+</script>

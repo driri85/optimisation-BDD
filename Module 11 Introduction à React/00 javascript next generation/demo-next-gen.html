@@ -1,0 +1,40 @@
+<script>
+
+    // Le spread ...
+    //----------------------------------------------
+    const p1 = { prenom: 'Brad', nom: 'PITT' };
+    const p2 = p1;
+    p2.nom = 'CRUISE';
+    console.log(p1);
+    console.log(p2);
+    const p3 = { prenom: 'Brad', nom: 'PITT' };
+    const p5 = { age: 18, taille: 1.8 }
+    //const p4 = {...p3};
+    const p4 = { ...p3, ...p5 };
+    p4.nom = 'CRUISE';
+    console.log(p3);
+    console.log(p4);
+
+    const tab1 = ['pomme', 'poire', 'kiwi'];
+    const tab2 = [...tab1, 'banane'];
+    console.log(tab2);
+    //----------------------------------------------
+
+    // Le spread REST
+    const trouverKiwi=(...args)=>{
+        return args.filter (el => el =='kiwi');
+    }
+    const tab = trouverKiwi('pomme','poire','cerise','kiwi');
+    // tab =['kiwi']
+    console.log (tab);
+
+    // autre demo
+    const ajouterCouleur=(...args)=>{
+        const tab=[]
+        args.map (el => tab.push(el));
+        return tab;
+    }
+    const couleurs =  ajouterCouleur('rouge','vert','bleu');
+    // couleurs = []'rouge','vert','bleu']
+    console.log(couleurs);
+</script>

@@ -1,0 +1,61 @@
+<h1>Démo Communiquer avec une API avec Axios</h1>
+<button id="btnAjouter">Ajouter</button> 
+<br /><br />
+<button id="btnModifier">Modifier</button>
+<br /><br />
+<button id="btnModifier2">Modifier2</button>
+<br /><br />
+<button id="btnEffacer">Effacer</button>
+<br /><br />
+<button id="btnLire">LIRE</button>
+<script
+  src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.7.7/axios.min.js"
+  integrity="sha512-DdX/YwF5e41Ok+AI81HI8f5/5UsoxCVT9GKYZRIzpLxb8Twz4ZwPPX+jQMwMhNQ9b5+zDEefc+dcvQoPWGNZ3g=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+></script>
+
+<script>
+  const dbFire =
+    "https://alpha-javascript-default-rtdb.europe-west1.firebasedatabase.app/";
+  const noeud = "films";
+
+  // POST AJOUTER //
+  document.getElementById("btnAjouter").onclick = async () => {
+    const url = `${dbFire}${noeud}.json`;
+    const film = { name: "The Matrix", year: "1999" };
+    const response = await axios.post(url, film);
+    console.log(response.data);
+  };
+
+  // PUT MODIFIER //
+  document.getElementById("btnModifier").onclick = async () => {
+    const id = "-OB5neA070M-9UiT_0bZ";
+    const url = `${dbFire}${noeud}/${id}.json`;
+    const film = { name: "STAR WARS", year: "1977" };
+    const response = await axios.put(url, film);
+    console.log(response.data);
+  };
+  // PATCH MODIFIER 2 //
+  document.getElementById("btnModifier2").onclick = async () => {
+    const id = "-OB5neA070M-9UiT_0bZ";
+    const url = `${dbFire}${noeud}/${id}.json`;
+    const film = { year: "1901" };
+    const response = await axios.patch(url, film);
+    console.log(response.data);
+  };
+  // DELETE ENLEVER //
+  document.getElementById("btnEffacer").onclick = async () => {
+    const id = "-OB5neA070M-9UiT_0bZ";
+    const url = `${dbFire}${noeud}/${id}.json`;
+    const film = { year: "1901" };
+    const response = await axios.delete(url, film);
+    console.log(response.data);
+  };
+  // GET LIRE //
+  document.getElementById("btnLire").onclick = async () => {
+    const url = `${dbFire}${noeud}.json`;
+    const response = await axios.get(url);
+    console.log(response.data);
+  };
+</script>

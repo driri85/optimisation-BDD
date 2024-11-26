@@ -1,0 +1,14 @@
+{
+  "name": "pwa-complete-guide",
+  "version": "1.0.0",
+  "description": "A complete guide to PWAs. Building a simple Instagram clone.",
+  "main": "index.html",
+  "scripts": {
+    "start": "http-server -c-1"
+  },
+
+  "author": "Jean-Frédéric VINCENT",
+  "dependencies": {
+    "http-server": "^14.1.1"
+  }
+}

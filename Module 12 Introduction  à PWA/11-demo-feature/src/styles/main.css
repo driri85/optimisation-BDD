@@ -1,0 +1,135 @@
+:root {
+	--header--bg: #a5f3fc;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	text-decoration: none;
+	list-style: none;
+}
+
+html {
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	font-size: 16px;
+	font-weight: normal;
+	color: #333;
+}
+
+body {
+	width: 100vw;
+	max-width: 100%;
+	min-height: 100vh;
+}
+
+/* HEADER */
+header {
+	width: 100%;
+	background: var(--header--bg);
+	padding: 16px 20px;
+	box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+h1 {
+	font-size: 1.6rem;
+	font-weight: bold;
+	text-align: center;
+}
+
+/*  SECTIONS */
+.section--container {
+	width: 100%;
+}
+
+.section--wrapper {
+	width: 100%;
+	padding: 32px 20px;
+}
+
+h2 {
+	font-size: 1.4rem;
+	font-weight: bold;
+	margin-bottom: 32px;
+}
+
+/*  BUTTONS */
+button {
+	height: 40px;
+	width: clamp(100px, 50%, 200px);
+	padding: 0 16px;
+	font-size: 0.8rem;
+	font-weight: bold;
+	border: 2px outset #333;
+	border-radius: 4px;
+	box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+	margin-bottom: 28px;
+	cursor: pointer;
+}
+
+/* GEOLOCALISATION */
+.geo--buttons {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 20px;
+}
+
+.geo--info p {
+	font-size: 1rem;
+	margin-bottom: 4px;
+	font-weight: bold;
+}
+
+.geo--info span {
+	font-size: 1rem;
+	font-weight: normal;
+}
+
+/* MEDIA */
+.media--buttons {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 20px;
+}
+
+.media--camera--container {
+	width: 100%;
+	aspect-ratio: 3 / 2;
+	border: 1px solid #333;
+	background: #999;
+	margin-bottom: 20px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	overflow: hidden;
+}
+
+.media--camera--video {
+	width: auto;
+	height: 100%;
+	object-fit: cover;
+}
+
+.media--photo--container {
+	width: 100%;
+	aspect-ratio: 3 / 2;
+	border: 1px solid #333;
+	background: #999;
+	margin-bottom: 20px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	overflow: hidden;
+}
+
+.media--photo--container img {
+	width: auto;
+	height: 100%;
+	object-fit: contain;
+}
+
+canvas {
+	display: none;
+}

@@ -1,0 +1,5 @@
+mettre la pwa ds public
+npm i : pour créer les node_module
+npm start
+
+voir c-1 ou c-2 pour le cache

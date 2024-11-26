@@ -1,0 +1,26 @@
+<script>
+
+function melanger(tab){
+	let tab2 =[];
+	for(let i =0;i<tab.length;i++){		
+		do{
+			// je genere un nb alea de 0 à taille du tableau
+			x =	Math.floor(Math.random() * tab.length);
+		}while(tab2[x] != undefined);
+		// tant que l'emplacement n'est pas vide
+		tab2[x] = tab[i];
+	}
+	return tab2;
+}
+
+//-----------------
+var tab = ['pomme','poire','cerise'];
+var tab2 = shuffle(tab);
+console.log(tab2);
+
+// je rassemble  2 tableau
+var tab3 = tab.concat(tab);
+// tab3 = ['pomme','poire','cerise','pomme','poire','cerise']
+
+
+</script>

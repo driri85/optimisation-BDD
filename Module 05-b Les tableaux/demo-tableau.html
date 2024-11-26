@@ -1,0 +1,15 @@
+<script>
+const fruits = ['pomme','poire','cerise','kiwi'];
+fruits.push('banane');
+
+// afficher un tableau : boucle for each
+for (let f of fruits){
+    console.log(f);
+}
+
+// slice = echantilloné un tableau
+let tableau2 = fruits.splice(2,1); // effacer cerise
+
+console.log(fruits); // fruits = ['pomme','poire','cerise','kiwi'];
+
+</script>

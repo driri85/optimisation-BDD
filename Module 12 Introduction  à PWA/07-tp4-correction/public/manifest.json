@@ -1,0 +1,31 @@
+{
+	"name": "Vip Cocktail",
+	"short_name": "Cocktail",
+	"start_url": "index.html",
+	"display": "standalone",
+	"background_color": "#172554",
+	"theme_color": "#172554",
+	"orientation": "portrait-primary",
+	"icons": [
+		{
+			"src": "img/icon/logo-72.png",
+			"type": "image/png",
+			"sizes": "72x72"
+		},
+		{
+			"src": "img/icon/logo-128.png",
+			"type": "image/png",
+			"sizes": "128x128"
+		},
+		{
+			"src": "img/icon/logo-192.png",
+			"type": "image/png",
+			"sizes": "192x192"
+		},
+		{
+			"src": "img/icon/logo-512.png",
+			"type": "image/png",
+			"sizes": "512x512"
+		}
+	]
+}

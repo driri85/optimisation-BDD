@@ -1,0 +1,19 @@
+
+<div id="demo"></div>
+
+<template id="info">
+    <div>Test</div>
+</template>
+
+<button id="btnAjouter">Ajouter</button>
+
+<script>
+document.getElementById('btnAjouter').onclick = ()=>{
+    // mettre un selecteur sur le template
+    const template = document.getElementById('info');
+    // cloner le template
+    const clone = template.content.cloneNode(true);
+    // ajouter le template cloner dans un autre balise
+    document.getElementById('demo').appendChild(clone);  
+}
+</script>

@@ -1,0 +1,49 @@
+<button id="ajouter">Ajouter une Personne</button>
+<button id="lecture">Lecture</button>
+<button id="effacer">effacer</button>
+<script>
+    const database ='https://vip-montpellier-default-rtdb.europe-west1.firebasedatabase.app/';
+    const noeud = database+ 'personne.json';
+
+document.getElementById('ajouter').onclick= async()=>{
+    const personne ={prenom:'Brad',nom:'PITT'};
+     const client ={prenom:'TOM',nom:'CRUISE'};
+    // const response = await axios.post(noeud,personne);
+   const response = await fetch(noeud, {
+  	method: "POST",
+  	headers: {
+  		"Content-Type": "application/json",
+  		"Access-Control-Allow-Origin": "*",
+  	},
+  	body: JSON.stringify(personne),
+  });
+  const data = await response.json();
+  console.log(data);
+}
+document.getElementById('lecture').onclick= async()=>{
+    const personne ={prenom:'Brad',nom:'PITT'};
+     const client ={prenom:'TOM',nom:'CRUISE'};
+    // const response = await axios.post(noeud,personne);
+   const response = await fetch(noeud);
+   const data = await response.json();
+   console.log(data);
+    // parcourir mon objet et recupérer les atttributs   cad
+    let tab =[];
+    for ( let id in data){
+        const p = data[id]; //{prenom:...nom:...}
+        p.id = id;
+        tab.push(p);
+    }
+    console.log(tab);
+}
+
+document.getElementById('effacer').onclick= async()=>{
+   let id = '-NtWUiievRoZZQOz6VXA';
+   let url = database + 'personne/' + id + '.json'
+   const response = await fetch(url, {
+  	method: "DELETE",
+  });
+  const data = await response.json();
+   console.log(data);
+}
+</script>

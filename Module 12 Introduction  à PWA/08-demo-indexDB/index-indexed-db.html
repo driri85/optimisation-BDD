@@ -1,0 +1,40 @@
+<script src="umd.js"></script>
+
+<script>
+
+
+  const personnes = [
+    { id: 1, prenom: "Brad", nom: "PITT" },
+    { id: 2, prenom: "Tom", nom: "CRUISE" },
+    { id: 3, prenom: "Angelina", nom: "JOLIE" },
+  ];
+const go= async ()=> {
+  const dbPromise = await idb.openDB("personnes-store", 1, {
+      upgrade(db) {
+        // Création de la table personne
+        //const store = db.createObjectStore('personne', {keyPath: 'id', autoIncrement: true });
+        const store = db.createObjectStore("personne", { keyPath: "id" });     
+        console.log("creation de la base");
+      },
+    });
+    // ajouter les personnes
+    // const tx = dbPromise.transaction("personne", "readwrite"); // readonly
+    // for (let p of personnes) {
+    //   await tx.store.put(p);
+    // }
+    // await tx.done;
+   
+    // const tx = dbPromise.transaction("personne", "readonly");
+    // const store = tx.objectStore("personne");
+    // const response = await store.getAll();
+    //   for (let p of response) {
+    //     console.log(p);
+    //   }
+
+      const tx = dbPromise.transaction("personne", "readwrite");
+      tx.store.clear()
+      tx.complete;
+}
+go();
+
+    </script>

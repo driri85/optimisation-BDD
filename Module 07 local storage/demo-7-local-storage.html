@@ -1,0 +1,13 @@
+<script>
+    
+    const fruits=['pomme','poire','cerise'];
+    // Ecrire
+    localStorage.setItems('fruits',JSON.stringify(fruits));
+    const data = localStorage.getItem('fruits');
+
+    // lire
+    if (data){
+        const tab= JSON.parse(data);
+        console.table(tab);
+    }
+</script>

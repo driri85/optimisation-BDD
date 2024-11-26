@@ -1,0 +1,26 @@
+{
+	"name": "PWA Introduction",
+	"short_name": "PWA-Intro",
+	"start_url": "index.html",
+	"display": "standalone",
+	"background_color": "#172554",
+	"theme_color": "#172554",
+	"orientation": "portrait-primary",
+	"icons": [
+		{
+			"src": "images/pwa-72.png",
+			"type": "image/png",
+			"sizes": "72x72"
+		},
+		{
+			"src": "images/pwa-128.png",
+			"type": "image/png",
+			"sizes": "128x128"
+		},
+		{
+			"src": "images/pwa-192.png",
+			"type": "image/png",
+			"sizes": "192x192"
+		}
+	]
+}

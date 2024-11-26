@@ -1,0 +1,21 @@
+<button id="btnAjouter">Ajouter</button>
+<div id="demo"></div>
+
+<template id="info">
+    <div>
+        <p>Test<p>
+    </div>
+</template>
+
+<script>
+document.getElementById('btnAjouter').onclick = ()=>{
+    // mettre un selecteur sur le template
+    const template = document.getElementById('info');
+    // cloner le template
+    const clone = template.content.cloneNode(true);
+    // modifier le contenu du template
+    clone.querySelector('p').innerHTML = 'Brad PITT';
+    // ajouter le template cloner dans un autre balise
+    document.getElementById('demo').appendChild(clone);  
+}
+</script>

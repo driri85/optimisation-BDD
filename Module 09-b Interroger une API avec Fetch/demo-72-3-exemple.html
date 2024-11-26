@@ -1,0 +1,22 @@
+<h1 id="demo"></h1>
+<script>
+
+const  attendDeuxSeconde= () => {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve('ok');
+    }, 2000);
+  });
+}
+const go = async() => {
+  
+  for (let i=5; i > -1;i--){
+    document.getElementById('demo').innerHTML=i;
+  await attendDeuxSeconde();
+    
+  }
+}
+
+go();
+
+</script>

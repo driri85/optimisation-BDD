@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Démo API Géolocalisation & Média</title>
+
+		<link rel="stylesheet" href="src/styles/main.css" />
+	</head>
+	<body>
+		<header>
+			<h1>
+				API GELOCALISATION<br />
+				& MEDIA
+			</h1>
+		</header>
+
+		<main>
+			<section class="section--container">
+				<div class="section--wrapper">
+					<h2>Géolocalisation</h2>
+
+					<div class="geo--buttons">
+						<button id="geoInstantButton">Instannée</button>
+						<button id="geoWatcherButton">Activer en direct</button>
+					</div>
+
+					<div class="geo--info">
+						<p>Timestamp : <span id="geo-timestamp"></span></p>
+						<p>Accuracy : <span id="geo-accuracy"></span></p>
+						<p>Altitude : <span id="geo-altitude"></span></p>
+						<p>AltitudeAccuracy : <span id="geo-altitudeAccuracy"></span></p>
+						<p>Heading : <span id="geo-heading"></span></p>
+						<p>Latitude : <span id="geo-latitude"></span></p>
+						<p>Longitude : <span id="geo-longitude"></span></p>
+						<p>Speed : <span id="geo-speed"></span></p>
+					</div>
+				</div>
+			</section>
+
+			<section class="section--container">
+				<div class="section--wrapper">
+					<h2>Média</h2>
+
+					<div class="media--buttons">
+						<button id="mediaCameraButton">Activer la camera</button>
+						<button id="mediaPhotoButton">Prendre une photo</button>
+					</div>
+
+					<div class="media--camera--container">
+						<video class="media--camera--video" id="mediaVideo">
+							Le flux vidéo n'est pas disponible.
+						</video>
+					</div>
+
+					<div class="media--photo--container">
+						<img
+							id="mediaPhoto"
+							alt="L'image capturée sera affichée dans cette boîte." />
+					</div>
+
+					<canvas id="canvas"></canvas>
+				</div>
+			</section>
+
+			<section class="section--container">
+				<div class="section--wrapper">
+					<div class="fileSystem--buttons">
+						<button id="fileSystemCreateButton">Créer un fichier</button>
+						<button id="fileSystemLoadButton">Charger un fichier</button>
+					</div>
+
+					<div class="fileSystem--image--container">
+						<img
+							id="fileSystemImage"
+							alt="L'image chargée sera affichée dans cette boîte." />
+					</div>
+				</div>
+			</section>
+		</main>
+
+		<script type="module" src="src/scripts/geo.js"></script>
+		<script type="module" src="src/scripts/media.js"></script>
+		<script type="module" src="src/scripts/fileSystem.js"></script>
+	</body>
+</html>

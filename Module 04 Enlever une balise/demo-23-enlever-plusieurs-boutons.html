@@ -1,0 +1,16 @@
+<button id="btnAjouter">Ajouter</button>
+<div id="demo"></div>
+
+<script>
+let i=0;
+document.getElementById('btnAjouter').onclick = ()=>{
+    i++;
+    const bouton = document.createElement('button');
+    bouton.innerHTML = 'Effacer '+i; 
+    // modifier le contenu du template
+    bouton.onclick=(event)=>{
+        event.target.remove();
+    }
+    document.getElementById('demo').appendChild(bouton);
+}
+</script>

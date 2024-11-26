@@ -1,0 +1,42 @@
+<script>
+//----------------------------------
+class Appareil {
+    constructor(name, status) {
+        this.name = name;
+        this.status = status;
+    }
+}
+//----------------------------------
+
+const appareils =[
+    {name:'TV' ,status:'allumé'},
+    {name:'Xbox' ,status:'éteint'},
+    {name:'Machine à café' ,status:'allumé'}
+];
+const a = {name:'Play Station 5', status:'allumé'}
+const b = new Appareil('Play Station 3','allumé');
+//----------------------------------
+// tout éteindre
+appareils.map(a => a.status='éteint');
+
+//----------------------------------
+//Afficher
+for (let a of appareils){
+    console.log(a.name+' '+a.status);
+}
+
+//----------------------------------
+const age =18;
+    // VIVE le if ternaire !!!
+    age >= 18
+      ? console.log('ok')
+      : console.log('interdit')
+
+//----------------------------------
+
+    // VIVE le if ternaire !!!
+    age >= 18
+    && console.log('ENTREZ')
+      
+
+</script>

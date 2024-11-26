@@ -1,0 +1,20 @@
+<style>
+    .rouge{background-color:tomato}
+</style>
+<div id="demo"></div>
+<button id="btnGo">GO</button>
+<script>
+document.getElementById('btnGo').onclick = () =>{
+    // créer une balise <p></p>
+    let p = document.createElement('p'); 
+    //<p>Brad PITT</p>
+    p.innerHTML = 'Brad PITT';  
+   
+    // Ajouter un attribut ou une class
+    //p.setAttribute('class','rouge'); // autre possiblité 
+    p.classList.add("rouge");
+   
+    // ajouter une balise dans une autre
+    document.getElementById('demo').appendChild(p);
+}
+</script>

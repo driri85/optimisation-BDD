@@ -1,0 +1,17 @@
+<input id="nom" placeholder="Votre Nom ICI">
+<br><br>
+<button onclick="afficher()">GO</button>
+<br><br>
+<h1 id="titre1"></h1>
+<script>
+function afficher(){
+    // lecture
+    let info = document.getElementById('nom').value;
+    // vider le champ input
+    document.getElementById('nom').value='';
+    // traitement
+    info = info.toUpperCase();
+    // afficher
+    document.getElementById('titre1').innerHTML = info;
+}
+</script>

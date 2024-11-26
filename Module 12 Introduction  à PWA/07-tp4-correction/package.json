@@ -1,0 +1,13 @@
+{
+  "name": "pwa-complete-guide",
+  "version": "1.0.0",
+  "description": "A vip cocktail",
+  "main": "index.html",
+  "scripts": {
+    "start": "http-server -c-1"
+  },
+  "author": "Jean-Frédéric VINCENT",
+  "dependencies": {
+    "http-server": "^14.1.1"
+  }
+}

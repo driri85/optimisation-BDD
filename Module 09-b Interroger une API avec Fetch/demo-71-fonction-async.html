@@ -1,0 +1,12 @@
+<button id="btnSWAPI">Démo API Basic</button> <br /><br />
+<script>
+  const getPersonne =async(id)=>{
+  const response = await fetch("https://swapi.dev/api/people/"+id);
+  const data = await response.json();
+  console.log(data);
+}
+document.getElementById("btnSWAPI").onclick = async () => {
+  const personne = await getPersonne(1);
+  console.log(personne);
+};
+</script>

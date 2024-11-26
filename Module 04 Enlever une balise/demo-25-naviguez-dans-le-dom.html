@@ -1,0 +1,16 @@
+<button id="btnAjouter">Ajouter</button>
+<table>
+    <tbody>
+        <tr>
+            <td> John</td>
+            <td><button id="btnEnlever">Enlever</button></td>
+        </tr>
+    </tbody>
+</table>
+
+<script>
+document.getElementById('btnEnlever').onclick = (event)=>{
+    const tr = event.target.closest('tr');
+    tr.remove();
+}
+</script>

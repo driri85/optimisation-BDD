@@ -1,0 +1,16 @@
+<script>
+const  repondApresDeuxSeconde= () => {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve('ok');
+    }, 2000);
+  });
+}
+
+const go= async()=> {
+  repondApresDeuxSeconde().then (info => {console.log(info)});
+}
+
+go();
+
+</script>

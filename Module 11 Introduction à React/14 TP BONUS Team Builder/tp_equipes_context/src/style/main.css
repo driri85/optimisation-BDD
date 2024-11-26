@@ -1,0 +1,217 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html {
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	font-size: 16px;
+	color: #333;
+}
+
+body {
+	width: 100vw;
+	max-width: 100%;
+	min-height: 100vh;
+}
+
+/* MAIN */
+.main--wrapper {
+	width: 100%;
+	max-width: 1280px;
+	margin: auto;
+	padding: 20px 40px;
+	display: grid;
+	grid-template-columns: 2fr 1fr;
+	gap: 40px;
+}
+
+/* GLOBAL */
+.section--container {
+	width: 100%;
+}
+
+.section--wrapper {
+	padding: 20px 20px;
+}
+
+.form--labelInput--wrapper {
+	display: grid;
+	grid-template-columns: 65px 1fr;
+	align-items: center;
+}
+
+.form--label {
+	font-size: 0.8rem;
+}
+
+.form--input,
+.form--select {
+	height: 32px;
+	padding: 0 12px;
+	font-size: 1rem;
+	display: flex;
+	align-items: center;
+}
+
+.table--row {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr) 80px;
+	padding: 0 12px;
+}
+
+/* ADD TEAM */
+.addTeam--container {
+	height: fit-content;
+	background: lightgray;
+}
+
+.addTeam--form {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	gap: 8px;
+}
+
+/* LIST TEAMS */
+.listTeams--container {
+	position: relative;
+	top: -160px;
+}
+
+.listTeams--wrapper {
+	padding: 0;
+}
+
+.team--header {
+	height: 80px;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	gap: 16px;
+	background: #f9f9f9;
+	border-top: 1px solid lightgray;
+	border-bottom: 1px solid lightgray;
+	padding: 0 12px;
+}
+
+.team--header p {
+	font-size: 1.6rem;
+}
+
+.team--info p {
+	font-size: 0.6rem;
+	color: #000;
+	margin: 4px 0;
+}
+
+.team--person {
+	height: 32px;
+	align-items: center;
+}
+
+.team--person:nth-child(odd) {
+	background: #f9f9f9;
+}
+
+/* ADD PERSON */
+.addPerson--container {
+	background: lightgray;
+}
+
+.addPerson--form {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	gap: 4px;
+}
+
+.addPerson--form input {
+	width: 200px;
+}
+
+.addPerson--form select {
+	width: 100px;
+	margin-bottom: 8px;
+}
+
+.addPerson--submit--wrapper {
+	margin-left: 65px;
+}
+
+/* LIST PERSONS */
+.listPerson--container {
+	height: fit-content;
+	background: lightgray;
+}
+
+.listPerson--wrapper {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+}
+
+.listPerson--person--wrapper {
+	display: grid;
+	grid-template-columns: 200px 1fr;
+	align-items: center;
+}
+
+.listPerson--person--name {
+	display: flex;
+	gap: 8px;
+}
+
+.listPerson--person--wrapper p {
+	font-size: 0.8rem;
+}
+
+/* BUTTON VALIDATE */
+.buttonValidate--wrapper {
+	display: flex;
+	align-items: center;
+}
+
+.buttonValidate--button {
+	height: 36px;
+	width: fit-content;
+	padding: 0 12px;
+	background: #5cb85c;
+	border: 2px outset #4cae4c;
+	border-radius: 4px;
+	box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+	color: #fff;
+	display: flex;
+	align-items: center;
+}
+
+.buttonValidate--button span {
+	margin-right: 8px;
+	font-size: 2rem;
+	font-weight: bold;
+}
+
+/* BUTTON DELETE */
+.buttonDelete--wrapper {
+	display: flex;
+	align-items: center;
+}
+
+.buttonDelete--button {
+	height: 36px;
+	aspect-ratio: 1 / 1;
+	background: #f0ad4e;
+	border: 2px outset #eea236;
+	border-radius: 4px;
+	box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.buttonDelete--image {
+	height: 75%;
+	width: auto;
+	object-fit: contain;
+}
