@@ -13,4 +13,7 @@ document.getElementById('btnAjouter').onclick = function () {
     newCell = newRow.insertCell();
     newCell.innerHTML = '<button class="btn btn-danger" onclick="remove(this)"><i class="fa fa-trash"></i></button>';
   };
-  function remove(el) {el.parentNode.parentNode.remove(el.parentNode.rowIndex)}
+  function remove(el) {
+    if(!confirm(`Are you sure you want to delete?`)) return;
+    el.parentNode.parentNode.parentNode.remove(el.parentNode.parentNode.rowIndex);
+}
