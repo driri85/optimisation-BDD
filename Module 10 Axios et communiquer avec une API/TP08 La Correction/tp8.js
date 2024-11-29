@@ -40,18 +40,19 @@ const afficherHTML = () => {
     let td = clone.querySelectorAll("td");
     td[0].innerHTML = p.prenom;
     td[1].innerHTML = p.nom;
-    btnEnlever = clone.querySelector(".btn-danger");
+    const btnEnlever = clone.querySelector(".btn-danger");
     btnEnlever.onclick = async (evt) => {
       const tr = evt.target.closest("tr");
       const id = tr.dataset.id;
       const url = `${dbFire}${noeud}/${id}.json`;
       const response = await axios.delete(url);
+      console.log(response.data);
       // effacer un attribur sur mon objet data
       delete data[id];
       //delete data.id;
       afficherHTML();
     };
-    btnModifier = clone.querySelector(".btn-warning");
+    const btnModifier = clone.querySelector(".btn-warning");
     btnModifier.onclick = async (evt) => {
       let tr = evt.target.closest("tr");
       const id = tr.dataset.id;

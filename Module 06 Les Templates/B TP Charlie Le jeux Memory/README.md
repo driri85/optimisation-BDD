@@ -1,9 +1,5 @@
 # TP CHARLIE Le jeux memory
 **Live preview**  :    
-[Tester le TP Charlie](https://www.sevenvalley.fr/tp-javascript/tpc)  
-
-![alt text](tpc.webp)
-  
 ## Créer un jeux pour téléphone portable !
 
 - Créer un tableau 1 de 12 entier (de 0 à 11)    
