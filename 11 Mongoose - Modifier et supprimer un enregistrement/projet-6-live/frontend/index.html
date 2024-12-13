@@ -1,0 +1,70 @@
+<h1> Hello Word 2 !</h1>
+<button id="btnAjouter">Ajouter</button>
+<table>
+    <thead>
+        <tr>
+            <th>Titre</th>
+            <th>Image</th>
+            <th>Note</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody id="tbody"></tbody>
+</table>
+<template id="templateFilm">
+    <tr>
+        <td></td>
+        <td>
+            <!-- <img  width="50"> -->
+        </td>
+        <td></td>
+        <td>
+            <button data-id="dksdmlkd">DELETE</button>
+        </td>   
+    </tr>
+</template>
+<script
+  src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.7.7/axios.min.js"
+  integrity="sha512-DdX/YwF5e41Ok+AI81HI8f5/5UsoxCVT9GKYZRIzpLxb8Twz4ZwPPX+jQMwMhNQ9b5+zDEefc+dcvQoPWGNZ3g=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+></script>
+
+
+<script>
+document.getElementById("btnAjouter").onclick = async()=>{
+    const film = {
+        title: "Mon film",
+        imageUrl: "https://fr.web.img3.acsta.net/pictures/22/09/02/13/38/4091023.jpg",
+        note: 5
+    }
+    const response = await axios.post('http://localhost:3000/api/film', film)
+    console.log(response.data);
+}
+
+loadFilms = async() => {
+    console.log('loadFilms');
+    const response = await axios.get('http://localhost:3000/api/film')
+    const films = response.data;
+    console.log(response.data);
+    const tbody = document.getElementById("tbody");
+    for (let film of films) {
+        const template = document.getElementById("templateFilm").content.cloneNode(true);
+        template.querySelectorAll("td")[0].textContent = film.title;
+        //console.log(template);
+        //template.querySelector('img').src=film.imageUrl;
+        template.querySelectorAll("td")[2].textContent = film.note;
+        template.querySelector('button').dataset.id = film._id;
+        
+        template.querySelector('button').onclick = (event) => {
+            const id = event.target.dataset.id;
+            console.log(id);
+            axios.delete(`http://localhost:3000/api/film/${id}`)
+        }
+        tbody.appendChild(template);
+    }
+}
+loadFilms();
+console.log('loadFilms1');
+
+</script>
